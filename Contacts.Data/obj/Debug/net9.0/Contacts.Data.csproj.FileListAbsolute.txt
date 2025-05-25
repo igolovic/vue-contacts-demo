@@ -1,0 +1,15 @@
+C:\work\repos\contacts-demo\Contacts.Data\bin\Debug\net9.0\Contacts.Data.deps.json
+C:\work\repos\contacts-demo\Contacts.Data\bin\Debug\net9.0\Contacts.Data.dll
+C:\work\repos\contacts-demo\Contacts.Data\bin\Debug\net9.0\Contacts.Data.pdb
+C:\work\repos\contacts-demo\Contacts.Data\obj\Debug\net9.0\Contacts.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\work\repos\contacts-demo\Contacts.Data\obj\Debug\net9.0\Contacts.Data.AssemblyInfoInputs.cache
+C:\work\repos\contacts-demo\Contacts.Data\obj\Debug\net9.0\Contacts.Data.AssemblyInfo.cs
+C:\work\repos\contacts-demo\Contacts.Data\obj\Debug\net9.0\Contacts.Data.csproj.CoreCompileInputs.cache
+C:\work\repos\contacts-demo\Contacts.Data\obj\Debug\net9.0\Contacts.Data.dll
+C:\work\repos\contacts-demo\Contacts.Data\obj\Debug\net9.0\refint\Contacts.Data.dll
+C:\work\repos\contacts-demo\Contacts.Data\obj\Debug\net9.0\Contacts.Data.pdb
+C:\work\repos\contacts-demo\Contacts.Data\obj\Debug\net9.0\ref\Contacts.Data.dll
+C:\work\repos\contacts-demo\Contacts.Data\bin\Debug\net9.0\Contacts.Models.dll
+C:\work\repos\contacts-demo\Contacts.Data\bin\Debug\net9.0\Contacts.Models.pdb
+C:\work\repos\contacts-demo\Contacts.Data\obj\Debug\net9.0\Contacts.Data.csproj.AssemblyReference.cache
+C:\work\repos\contacts-demo\Contacts.Data\obj\Debug\net9.0\Contacts.89CA9A1A.Up2Date

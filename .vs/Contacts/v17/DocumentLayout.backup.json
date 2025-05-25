@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\work\\repos\\contacts-demo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4972A8E6-2B5F-455B-9AF1-1A187CEA46C1}|Contacts.WebApi\\Contacts.WebApi.csproj|c:\\work\\repos\\contacts-demo\\contacts.webapi\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4972A8E6-2B5F-455B-9AF1-1A187CEA46C1}|Contacts.WebApi\\Contacts.WebApi.csproj|solutionrelative:contacts.webapi\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EDF0D21-E5A1-4552-8B4F-AE22814D7A57}|Contacts.Data\\Contacts.Data.csproj|c:\\work\\repos\\contacts-demo\\contacts.data\\icontactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EDF0D21-E5A1-4552-8B4F-AE22814D7A57}|Contacts.Data\\Contacts.Data.csproj|solutionrelative:contacts.data\\icontactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EDF0D21-E5A1-4552-8B4F-AE22814D7A57}|Contacts.Data\\Contacts.Data.csproj|c:\\work\\repos\\contacts-demo\\contacts.data\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EDF0D21-E5A1-4552-8B4F-AE22814D7A57}|Contacts.Data\\Contacts.Data.csproj|solutionrelative:contacts.data\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4972A8E6-2B5F-455B-9AF1-1A187CEA46C1}|Contacts.WebApi\\Contacts.WebApi.csproj|c:\\work\\repos\\contacts-demo\\contacts.webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4972A8E6-2B5F-455B-9AF1-1A187CEA46C1}|Contacts.WebApi\\Contacts.WebApi.csproj|solutionrelative:contacts.webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4972A8E6-2B5F-455B-9AF1-1A187CEA46C1}|Contacts.WebApi\\Contacts.WebApi.csproj|c:\\work\\repos\\contacts-demo\\contacts.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4972A8E6-2B5F-455B-9AF1-1A187CEA46C1}|Contacts.WebApi\\Contacts.WebApi.csproj|solutionrelative:contacts.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4972A8E6-2B5F-455B-9AF1-1A187CEA46C1}|Contacts.WebApi\\Contacts.WebApi.csproj|c:\\work\\repos\\contacts-demo\\contacts.webapi\\contacts.webapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{4972A8E6-2B5F-455B-9AF1-1A187CEA46C1}|Contacts.WebApi\\Contacts.WebApi.csproj|solutionrelative:contacts.webapi\\contacts.webapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4972A8E6-2B5F-455B-9AF1-1A187CEA46C1}|Contacts.WebApi\\Contacts.WebApi.csproj|c:\\work\\repos\\contacts-demo\\contacts.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4972A8E6-2B5F-455B-9AF1-1A187CEA46C1}|Contacts.WebApi\\Contacts.WebApi.csproj|solutionrelative:contacts.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7BC76F4-F44F-D88D-A370-DF2D5BC1453F}|Contacts.Models\\Contacts.Models.csproj|c:\\work\\repos\\contacts-demo\\contacts.models\\contactdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7BC76F4-F44F-D88D-A370-DF2D5BC1453F}|Contacts.Models\\Contacts.Models.csproj|solutionrelative:contacts.models\\contactdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ContactRepository.cs",
+              "DocumentMoniker": "C:\\work\\repos\\contacts-demo\\Contacts.Data\\ContactRepository.cs",
+              "RelativeDocumentMoniker": "Contacts.Data\\ContactRepository.cs",
+              "ToolTip": "C:\\work\\repos\\contacts-demo\\Contacts.Data\\ContactRepository.cs",
+              "RelativeToolTip": "Contacts.Data\\ContactRepository.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAgwIoAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T09:05:25.416Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ContactsController.cs",
+              "DocumentMoniker": "C:\\work\\repos\\contacts-demo\\Contacts.WebApi\\Controllers\\ContactsController.cs",
+              "RelativeDocumentMoniker": "Contacts.WebApi\\Controllers\\ContactsController.cs",
+              "ToolTip": "C:\\work\\repos\\contacts-demo\\Contacts.WebApi\\Controllers\\ContactsController.cs",
+              "RelativeToolTip": "Contacts.WebApi\\Controllers\\ContactsController.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAwFQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T09:46:20.706Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IContactRepository.cs",
+              "DocumentMoniker": "C:\\work\\repos\\contacts-demo\\Contacts.Data\\IContactRepository.cs",
+              "RelativeDocumentMoniker": "Contacts.Data\\IContactRepository.cs",
+              "ToolTip": "C:\\work\\repos\\contacts-demo\\Contacts.Data\\IContactRepository.cs",
+              "RelativeToolTip": "Contacts.Data\\IContactRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAArwAwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:23:12.07Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\work\\repos\\contacts-demo\\Contacts.WebApi\\Program.cs",
+              "RelativeDocumentMoniker": "Contacts.WebApi\\Program.cs",
+              "ToolTip": "C:\\work\\repos\\contacts-demo\\Contacts.WebApi\\Program.cs",
+              "RelativeToolTip": "Contacts.WebApi\\Program.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T09:56:40.442Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\work\\repos\\contacts-demo\\Contacts.WebApi\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Contacts.WebApi\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\work\\repos\\contacts-demo\\Contacts.WebApi\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Contacts.WebApi\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-24T10:29:50.016Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Contacts.WebApi",
+              "DocumentMoniker": "C:\\work\\repos\\contacts-demo\\Contacts.WebApi\\Contacts.WebApi.csproj",
+              "RelativeDocumentMoniker": "Contacts.WebApi\\Contacts.WebApi.csproj",
+              "ToolTip": "C:\\work\\repos\\contacts-demo\\Contacts.WebApi\\Contacts.WebApi.csproj",
+              "RelativeToolTip": "Contacts.WebApi\\Contacts.WebApi.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-24T10:45:03.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\work\\repos\\contacts-demo\\Contacts.WebApi\\appsettings.json",
+              "RelativeDocumentMoniker": "Contacts.WebApi\\appsettings.json",
+              "ToolTip": "C:\\work\\repos\\contacts-demo\\Contacts.WebApi\\appsettings.json",
+              "RelativeToolTip": "Contacts.WebApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-24T10:01:54.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ContactDto.cs",
+              "DocumentMoniker": "C:\\work\\repos\\contacts-demo\\Contacts.Models\\ContactDto.cs",
+              "RelativeDocumentMoniker": "Contacts.Models\\ContactDto.cs",
+              "ToolTip": "C:\\work\\repos\\contacts-demo\\Contacts.Models\\ContactDto.cs",
+              "RelativeToolTip": "Contacts.Models\\ContactDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T09:51:44.694Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

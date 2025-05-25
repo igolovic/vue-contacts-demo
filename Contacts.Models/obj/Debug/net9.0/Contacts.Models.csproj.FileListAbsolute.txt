@@ -1,0 +1,11 @@
+C:\work\repos\contacts-demo\Contacts.Models\bin\Debug\net9.0\Contacts.Models.deps.json
+C:\work\repos\contacts-demo\Contacts.Models\bin\Debug\net9.0\Contacts.Models.dll
+C:\work\repos\contacts-demo\Contacts.Models\bin\Debug\net9.0\Contacts.Models.pdb
+C:\work\repos\contacts-demo\Contacts.Models\obj\Debug\net9.0\Contacts.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\work\repos\contacts-demo\Contacts.Models\obj\Debug\net9.0\Contacts.Models.AssemblyInfoInputs.cache
+C:\work\repos\contacts-demo\Contacts.Models\obj\Debug\net9.0\Contacts.Models.AssemblyInfo.cs
+C:\work\repos\contacts-demo\Contacts.Models\obj\Debug\net9.0\Contacts.Models.csproj.CoreCompileInputs.cache
+C:\work\repos\contacts-demo\Contacts.Models\obj\Debug\net9.0\Contacts.Models.dll
+C:\work\repos\contacts-demo\Contacts.Models\obj\Debug\net9.0\refint\Contacts.Models.dll
+C:\work\repos\contacts-demo\Contacts.Models\obj\Debug\net9.0\Contacts.Models.pdb
+C:\work\repos\contacts-demo\Contacts.Models\obj\Debug\net9.0\ref\Contacts.Models.dll
