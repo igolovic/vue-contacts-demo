@@ -1,7 +1,6 @@
 <!-- src/App.vue -->
 <template>
   <div id="app">
-    <h1>Contacts</h1>
     <ContactTable />
   </div>
 </template>

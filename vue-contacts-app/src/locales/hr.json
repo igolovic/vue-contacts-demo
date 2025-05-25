@@ -1,0 +1,28 @@
+{
+  "labels": {
+    "firstNameFilter": "Filter po imenu",
+    "lastNameFilter": "Filter po prezimenu",
+    "name": "Ime",
+    "lastName": "Prezime",
+    "email": "E-pošta",
+    "created": "Kreirano",
+    "modified": "Izmijenjeno",
+    "actions": "Akcije",
+    "edit": "Uredi",
+    "save": "Spremi",
+    "cancel": "Odustani",
+    "delete": "Izbriši",
+    "add": "Dodaj",
+    "previous": "Prethodno",
+    "next": "Sljedeće"
+  },
+  "messages": {
+    "nameRequired": "Ime je obavezno.",
+    "lastNameRequired": "Prezime je obavezno.",
+    "invalidEmail": "Unesite ispravnu e-mail adresu.",
+    "deleteConfirmation": "Jeste li sigurni da želite izbrisati ovaj kontakt?",
+    "unexpectedError": "Došlo je do neočekivane pogreške.",
+    "page": "Strana ",
+    "records": " zapisa"
+  }
+}

@@ -6,18 +6,17 @@ namespace Contacts.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Name is required.")]
         [MaxLength(100)]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Last name is required.")]
         [MaxLength(100)]
         public string LastName { get; set; }
 
-        [Required]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
         [MaxLength(254)]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         public DateTime Created { get; set; }
 

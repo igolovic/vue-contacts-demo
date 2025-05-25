@@ -23,7 +23,7 @@ namespace Contacts.Data
 
             cmd.Parameters.AddWithValue("@Name", contact.Name);
             cmd.Parameters.AddWithValue("@LastName", contact.LastName);
-            cmd.Parameters.AddWithValue("@Email", contact.Email);
+            cmd.Parameters.AddWithValue("@Email", (object?)contact.Email ?? DBNull.Value);
 
             conn.Open();
             return Convert.ToInt32(cmd.ExecuteScalar());
@@ -48,7 +48,7 @@ namespace Contacts.Data
                     Id = reader.GetInt32(0),
                     Name = reader.GetString(1),
                     LastName = reader.GetString(2),
-                    Email = reader.GetString(3),
+                    Email = reader.IsDBNull(3) ? null : reader.GetString(3),
                     Created = reader.GetDateTime(4),
                     Modified = reader.IsDBNull(5) ? null : reader.GetDateTime(5)
                 };
@@ -77,7 +77,7 @@ namespace Contacts.Data
                     Id = reader.GetInt32(0),
                     Name = reader.GetString(1),
                     LastName = reader.GetString(2),
-                    Email = reader.GetString(3),
+                    Email = reader.IsDBNull(3) ? null : reader.GetString(3),
                     Created = reader.GetDateTime(4),
                     Modified = reader.IsDBNull(5) ? null : reader.GetDateTime(5)
                 });
@@ -97,7 +97,7 @@ namespace Contacts.Data
             cmd.Parameters.AddWithValue("@Id", contact.Id);
             cmd.Parameters.AddWithValue("@Name", contact.Name);
             cmd.Parameters.AddWithValue("@LastName", contact.LastName);
-            cmd.Parameters.AddWithValue("@Email", contact.Email);
+            cmd.Parameters.AddWithValue("@Email", (object?)contact.Email ?? DBNull.Value);
 
             conn.Open();
             cmd.ExecuteNonQuery();
@@ -150,7 +150,7 @@ namespace Contacts.Data
                     Id = reader.GetInt32(0),
                     Name = reader.GetString(1),
                     LastName = reader.GetString(2),
-                    Email = reader.GetString(3),
+                    Email = reader.IsDBNull(3) ? null : reader.GetString(3),
                     Created = reader.GetDateTime(4),
                     Modified = reader.IsDBNull(5) ? null : reader.GetDateTime(5)
                 });
