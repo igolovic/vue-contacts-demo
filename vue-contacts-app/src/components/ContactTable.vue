@@ -101,19 +101,7 @@
           </td>
         </tr>
         <tr>
-          <td><input maxlength="100" v-model="newContact.name" class="form-control" /></td>
-          <td><input maxlength="100" v-model="newContact.lastName" class="form-control" /></td>
-          <td><input maxlength="254" v-model="newContact.email" class="form-control" /></td>
-          <td colspan="2"></td>
-          <td>
-            <button
-              class="btn btn-sm btn-success"
-              @click="addContact"
-              :disabled="editIndex !== null"
-            >
-              {{ $t('labels.add') }}
-            </button>
-          </td>
+          <ContactTableAddNew :editIndex="editIndex" @add-contact="addContactEmitted" />
         </tr>
       </tbody>
     </table>
@@ -142,7 +130,9 @@
 </template>
 
 <script>
-const BASE_URL = 'https://localhost:7108'
+import ContactTableAddNew from './ContactTableAddNew.vue'
+import { validateContact, sanitizeContact } from '@/contactUtils'
+import { BASE_URL } from '@/config'
 
 export default {
   data() {
@@ -161,12 +151,10 @@ export default {
         lastName: '',
         email: '',
       },
-      newContact: {
-        name: '',
-        lastName: '',
-        email: '',
-      },
     }
+  },
+  components: {
+    ContactTableAddNew,
   },
   computed: {
     totalPages() {
@@ -233,11 +221,22 @@ export default {
       this.editIndex = null
       this.editContact = {}
     },
+    async addContactEmitted() {
+      try {
+        this.newContact = {}
+
+        // Refresh list
+        this.fetchContacts()
+      } catch (err) {
+        console.error('Add contact error:', err)
+        alert(this.$t('messages.unexpectedError'))
+      }
+    },
     async saveEdit(id) {
       try {
-        if (!this.validateContact(this.editContact)) return
+        if (!validateContact(this.editContact)) return
 
-        let contact = this.sanitizeContact(this.editContact)
+        let contact = sanitizeContact(this.editContact)
         const response = await fetch(`${BASE_URL}/api/contacts/${id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
@@ -295,58 +294,9 @@ export default {
     confirmDelete(id) {
       this.deleteContact(id)
     },
-    async addContact() {
-      try {
-        if (!this.validateContact(this.newContact)) return
-
-        let contact = this.sanitizeContact(this.newContact)
-        const response = await fetch(`${BASE_URL}/api/contacts`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(contact),
-        })
-
-        if (!response.ok) throw new Error('Failed to add contact.')
-
-        this.newContact = { name: '', lastName: '', email: '' }
-        this.fetchContacts()
-      } catch (err) {
-        console.error(err)
-      }
-    },
-    sanitizeContact(contact) {
-      return {
-        ...contact,
-        email: contact.email?.trim() === '' ? null : contact.email,
-      }
-    },
-    validateContact(contact) {
-      const { name, lastName, email } = contact
-      const messages = []
-
-      if (!name) {
-        messages.push(this.$t('messages.nameRequired'))
-      }
-      if (!lastName) {
-        messages.push(this.$t('messages.lastNameRequired'))
-      }
-      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        messages.push(this.$t('messages.invalidEmail'))
-      }
-
-      if (messages.length > 0) {
-        alert(messages.join('\n'))
-        return false
-      }
-      return true
-    },
   },
   mounted() {
     this.fetchContacts()
   },
 }
 </script>
-
-<style scoped>
-/* Removed custom CSS */
-</style>

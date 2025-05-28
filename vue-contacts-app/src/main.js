@@ -1,5 +1,4 @@
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-import './assets/main.css'
 import i18n from './i18n'
 
 import { createApp } from 'vue'
