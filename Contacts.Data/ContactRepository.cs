@@ -29,63 +29,6 @@ namespace Contacts.Data
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
 
-        public ContactDto GetContactById(int id)
-        {
-            using var conn = new SqlConnection(_connectionString);
-            using var cmd = new SqlCommand("sp_GetContactById", conn)
-            {
-                CommandType = CommandType.StoredProcedure
-            };
-
-            cmd.Parameters.AddWithValue("@Id", id);
-            conn.Open();
-
-            using var reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                return new ContactDto
-                {
-                    Id = reader.GetInt32(0),
-                    Name = reader.GetString(1),
-                    LastName = reader.GetString(2),
-                    Email = reader.IsDBNull(3) ? null : reader.GetString(3),
-                    Created = reader.GetDateTime(4),
-                    Modified = reader.IsDBNull(5) ? null : reader.GetDateTime(5)
-                };
-            }
-
-            return null;
-        }
-
-        public IEnumerable<ContactDto> GetAllContacts()
-        {
-            var contacts = new List<ContactDto>();
-
-            using var conn = new SqlConnection(_connectionString);
-            using var cmd = new SqlCommand("sp_GetAllContacts", conn)
-            {
-                CommandType = CommandType.StoredProcedure
-            };
-
-            conn.Open();
-            using var reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                contacts.Add(new ContactDto
-                {
-                    Id = reader.GetInt32(0),
-                    Name = reader.GetString(1),
-                    LastName = reader.GetString(2),
-                    Email = reader.IsDBNull(3) ? null : reader.GetString(3),
-                    Created = reader.GetDateTime(4),
-                    Modified = reader.IsDBNull(5) ? null : reader.GetDateTime(5)
-                });
-            }
-
-            return contacts;
-        }
-
         public void UpdateContact(ContactDto contact)
         {
             using var conn = new SqlConnection(_connectionString);
@@ -114,12 +57,6 @@ namespace Contacts.Data
             cmd.Parameters.AddWithValue("@Id", id);
             conn.Open();
             cmd.ExecuteNonQuery();
-        }
-
-        public class PagedResult<T>
-        {
-            public List<T> Items { get; set; } = new();
-            public int TotalCount { get; set; }
         }
 
         public async Task<PagedResult<ContactDto>> GetContactsPagedFilteredAsync(

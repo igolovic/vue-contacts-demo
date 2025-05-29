@@ -6,12 +6,14 @@
         @input="onFilterChange"
         class="form-control d-inline-block w-auto me-2"
         :placeholder="$t('labels.firstNameFilter')"
+        :disabled="editIndex !== null"
       />
       <input
         v-model="lastNameFilter"
         @input="onFilterChange"
         class="form-control d-inline-block w-auto"
         :placeholder="$t('labels.lastNameFilter')"
+        :disabled="editIndex !== null"
       />
     </div>
 
@@ -58,47 +60,20 @@
       </thead>
       <tbody>
         <tr v-for="(contact, index) in contacts" :key="contact.id">
-          <td>
-            <input v-if="editIndex === index" v-model="editContact.name" class="form-control" />
-            <span v-else>{{ contact.name }}</span>
-          </td>
-          <td>
-            <input v-if="editIndex === index" v-model="editContact.lastName" class="form-control" />
-            <span v-else>{{ contact.lastName }}</span>
-          </td>
-          <td>
-            <input v-if="editIndex === index" v-model="editContact.email" class="form-control" />
-            <span v-else>{{ contact.email }}</span>
-          </td>
-          <td>{{ formatDate(contact.created) }}</td>
-          <td>{{ contact.modified ? formatDate(contact.modified) : '-' }}</td>
-          <td>
-            <button
-              v-if="editIndex !== index"
-              class="btn btn-sm btn-primary"
-              @click="startEdit(index)"
-              :disabled="editIndex !== null"
-            >
-              {{ $t('labels.edit') }}
-            </button>
-            <button
-              v-if="editIndex === index"
-              class="btn btn-sm btn-success me-1"
-              @click="saveEdit(contact.id)"
-            >
-              {{ $t('labels.save') }}
-            </button>
-            <button v-if="editIndex === index" class="btn btn-sm btn-secondary" @click="cancelEdit">
-              {{ $t('labels.cancel') }}
-            </button>
-            <button
-              class="btn btn-sm btn-danger ms-1"
-              @click="confirmDelete(contact.id)"
-              :disabled="editIndex !== null"
-            >
-              {{ $t('labels.delete') }}
-            </button>
-          </td>
+          <ContactEdit
+            :id="contact.id"
+            :name="contact.name"
+            :last-name="contact.lastName"
+            :email="contact.email"
+            :created="contact.created"
+            :modified="contact.modified"
+            :edit-index="editIndex"
+            :index="index"
+            @start-edit="startEditEmitted(index)"
+            @save-edit="saveEditEmitted"
+            @cancel-edit="cancelContactEmitted"
+            @confirm-delete="deleteContactEmitted"
+          />
         </tr>
         <tr>
           <ContactTableAddNew :editIndex="editIndex" @add-contact="addContactEmitted" />
@@ -119,9 +94,9 @@
 
 <script>
 import { BASE_URL } from '@/config'
-import { validateContact, sanitizeContact } from '@/contactUtils'
 import ContactTableAddNew from './ContactTableAddNew.vue'
 import ContactPagination from './ContactPagination.vue'
+import ContactEdit from './ContactEdit.vue'
 
 export default {
   data() {
@@ -145,6 +120,7 @@ export default {
   components: {
     ContactTableAddNew,
     ContactPagination,
+    ContactEdit,
   },
   computed: {
     totalPages() {
@@ -178,10 +154,7 @@ export default {
       this.pageIndex = 0
       this.fetchContacts()
     },
-    formatDate(dateString) {
-      const date = new Date(dateString)
-      return date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
-    },
+
     goToPreviousPage() {
       this.pageIndex--
       this.fetchContacts()
@@ -203,14 +176,7 @@ export default {
     getSortIndicator() {
       return this.sortDirection === 'ASC' ? '↑' : '↓'
     },
-    startEdit(index) {
-      this.editIndex = index
-      this.editContact = { ...this.contacts[index] }
-    },
-    cancelEdit() {
-      this.editIndex = null
-      this.editContact = {}
-    },
+
     async addContactEmitted() {
       try {
         this.newContact = {}
@@ -222,67 +188,18 @@ export default {
         alert(this.$t('messages.unexpectedError'))
       }
     },
-    async saveEdit(id) {
-      try {
-        if (!validateContact(this.editContact)) return
-
-        let contact = sanitizeContact(this.editContact)
-        const response = await fetch(`${BASE_URL}/api/contacts/${id}`, {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(contact),
-        })
-
-        // Only try to parse JSON if response is NOT 204
-        let data = null
-        if (response.status !== 204) {
-          try {
-            data = await response.json()
-          } catch (err) {
-            console.warn('Response body is not valid JSON:', err)
-          }
-        }
-
-        if (!response.ok) {
-          if (data?.errors) {
-            const messages = Object.values(data.errors).flat()
-            alert(messages.join('\n'))
-          } else if (typeof data === 'string') {
-            alert(data) // Handle string error message like "Contact ID mismatch."
-          } else {
-            alert(this.$t('messages.unexpectedError'))
-          }
-          return
-        }
-
-        // Success — no content returned, so proceed
-        this.editIndex = null
-        this.editContact = {}
-        this.fetchContacts()
-      } catch (err) {
-        console.error('Save edit error:', err)
-        alert(this.$t('messages.unexpectedError'))
-      }
+    async startEditEmitted(index) {
+      this.editIndex = index
     },
-    async deleteContact(id) {
-      try {
-        const confirmed = confirm(this.$t('messages.deleteConfirmation'))
-        if (!confirmed) return
-
-        const response = await fetch(`${BASE_URL}/api/contacts/${id}`, {
-          method: 'DELETE',
-        })
-        if (!response.ok) throw new Error(this.$t('messages.unexpectedError'))
-
-        // Refresh list
-        this.fetchContacts()
-      } catch (err) {
-        console.error(err)
-        alert(this.$t('messages.unexpectedError'))
-      }
+    async cancelContactEmitted() {
+      this.editIndex = null
     },
-    confirmDelete(id) {
-      this.deleteContact(id)
+    async saveEditEmitted() {
+      this.editIndex = null
+      this.fetchContacts()
+    },
+    async deleteContactEmitted() {
+      this.fetchContacts()
     },
   },
   mounted() {

@@ -17,25 +17,6 @@ namespace Contacts.WebApi.Controllers
             _contactRepository = contactRepository;
         }
 
-        // GET: api/contacts
-        [HttpGet]
-        public ActionResult<IEnumerable<ContactDto>> GetAll()
-        {
-            var contacts = _contactRepository.GetAllContacts();
-            return Ok(contacts);
-        }
-
-        // GET: api/contacts/{id}
-        [HttpGet("{id}")]
-        public ActionResult<ContactDto> GetById(int id)
-        {
-            var contact = _contactRepository.GetContactById(id);
-            if (contact == null)
-                return NotFound();
-
-            return Ok(contact);
-        }
-
         // POST: api/contacts
         [HttpPost]
         public ActionResult<int> Create([FromBody] ContactDto contact)
@@ -44,16 +25,13 @@ namespace Contacts.WebApi.Controllers
                 return BadRequest(ModelState);
 
             var newId = _contactRepository.InsertContact(contact);
-            return CreatedAtAction(nameof(GetById), new { id = newId }, newId);
+            return CreatedAtAction(nameof(Create), new { id = newId }, newId);
         }
 
         // PUT: api/contacts/{id}
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody] ContactDto contact)
         {
-            if (id != contact.Id)
-                return BadRequest("Contact ID mismatch.");
-
             _contactRepository.UpdateContact(contact);
             return NoContent();
         }
