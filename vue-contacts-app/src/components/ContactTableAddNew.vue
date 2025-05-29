@@ -18,8 +18,7 @@
 
 <script>
 import { validateContact, sanitizeContact } from '@/contactUtils'
-
-const BASE_URL = 'https://localhost:7108'
+import { BASE_URL } from '@/config'
 
 export default {
   data() {

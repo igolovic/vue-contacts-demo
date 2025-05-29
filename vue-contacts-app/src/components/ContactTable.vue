@@ -106,33 +106,22 @@
       </tbody>
     </table>
 
-    <div class="pagination d-flex justify-content-between align-items-center mt-3">
-      <button
-        :disabled="pageIndex === 0 || editIndex !== null"
-        @click="goToPreviousPage"
-        class="btn btn-primary"
-      >
-        {{ $t('labels.previous') }}
-      </button>
-      <span>
-        {{ this.$t('messages.page') }} {{ pageIndex + 1 }} / {{ totalPages }} ({{ totalCount }}
-        {{ this.$t('messages.records') }})
-      </span>
-      <button
-        :disabled="pageIndex + 1 >= totalPages || editIndex !== null"
-        @click="goToNextPage"
-        class="btn btn-primary"
-      >
-        {{ $t('labels.next') }}
-      </button>
-    </div>
+    <ContactPagination
+      :pageIndex="pageIndex"
+      :totalPages="totalPages"
+      :totalCount="totalCount"
+      :editIndex="editIndex"
+      @go-to-previous-page="goToPreviousPage"
+      @go-to-next-page="goToNextPage"
+    />
   </div>
 </template>
 
 <script>
-import ContactTableAddNew from './ContactTableAddNew.vue'
-import { validateContact, sanitizeContact } from '@/contactUtils'
 import { BASE_URL } from '@/config'
+import { validateContact, sanitizeContact } from '@/contactUtils'
+import ContactTableAddNew from './ContactTableAddNew.vue'
+import ContactPagination from './ContactPagination.vue'
 
 export default {
   data() {
@@ -155,6 +144,7 @@ export default {
   },
   components: {
     ContactTableAddNew,
+    ContactPagination,
   },
   computed: {
     totalPages() {
