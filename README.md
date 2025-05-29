@@ -19,6 +19,9 @@ The frontend is developed using Vue.js, offering a responsive user interface for
 
 ## Getting Started
 
+1. **Database:**   
+   - in SSQL Server Management Studio execute `create-test-database.sql`
+   - set connection string in `/Contacts.WebApi/appsettings.json`  
 1. **Backend:**  
    - Navigate to `/Contacts.WebApi`
    - Build and run the ASP.NET Core Web API
