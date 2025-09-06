@@ -1,4 +1,4 @@
-<img width="1273" height="365" alt="image" src="https://github.com/user-attachments/assets/4f79ea6d-5aa8-4f39-93cc-20cc8aa9ee7e" />
+<img width="1272" height="355" alt="image" src="https://github.com/user-attachments/assets/25c7a4d6-1c5e-4223-83aa-ec462217c026" />
       
 # Contacts App
 
