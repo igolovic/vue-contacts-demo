@@ -1,3 +1,5 @@
+<img width="1273" height="365" alt="image" src="https://github.com/user-attachments/assets/4f79ea6d-5aa8-4f39-93cc-20cc8aa9ee7e" />
+      
 # Contacts App
 
 **Contacts App** is a web application for managing contact information.   
